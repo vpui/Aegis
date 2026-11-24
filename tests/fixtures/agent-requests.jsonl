@@ -1,0 +1,4 @@
+{"kind":"file.read","target":"crates/aegis-core/src/lib.rs","source":"trusted"}
+{"kind":"file.read","target":".env","source":"untrusted"}
+{"kind":"network.connect","target":"api.example.com","source":"mixed"}
+{"kind":"mcp.call","target":"github.create_pull_request","source":"mixed"}

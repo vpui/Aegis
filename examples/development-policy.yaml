@@ -1,0 +1,30 @@
+version: 1
+default_action: ask
+
+rules:
+  - id: allow-project-read
+    effect: allow
+    action: file.read
+    paths:
+      - "src/**"
+      - "tests/**"
+
+  - id: deny-secrets
+    effect: deny
+    action: file.read
+    paths:
+      - ".env"
+      - "secrets/**"
+
+  - id: ask-before-git-push
+    effect: ask
+    action: process.execute
+    commands:
+      - "git push"
+
+  - id: allow-local-development-server
+    effect: allow
+    action: network.connect
+    domains:
+      - "localhost"
+      - "127.0.0.1"

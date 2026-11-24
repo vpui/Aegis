@@ -1,0 +1,19 @@
+[package]
+name = "aegis-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+aegis-core = { path = "../../crates/aegis-core" }
+aegis-mcp-proxy = { path = "../../crates/aegis-mcp-proxy" }
+aegis-policy = { path = "../../crates/aegis-policy" }
+aegis-tui = { path = "../../crates/aegis-tui" }
+clap.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

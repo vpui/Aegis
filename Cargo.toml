@@ -1,0 +1,34 @@
+[workspace]
+members = [
+    "apps/aegis-cli",
+    "crates/aegis-core",
+    "crates/aegis-mcp-proxy",
+    "crates/aegis-policy",
+    "crates/aegis-tui",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/your-org/aegis"
+rust-version = "1.85"
+
+[workspace.dependencies]
+anyhow = "1.0.95"
+clap = { version = "4.5.27", features = ["derive"] }
+crossterm = "0.28.1"
+globset = "0.4.15"
+ratatui = "0.29.0"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.135"
+serde_yaml = "0.9.34"
+thiserror = "2.0.11"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

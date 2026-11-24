@@ -1,0 +1,2 @@
+{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"github.create_pull_request","arguments":{"title":"demo"}}}
+{"jsonrpc":"2.0","id":2,"method":"resources/list","params":{}}

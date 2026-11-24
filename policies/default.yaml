@@ -1,0 +1,41 @@
+version: 1
+default_action: ask
+
+rules:
+  - id: deny-sensitive-paths
+    effect: deny
+    action: file.read
+    paths:
+      - ".env"
+      - ".env.*"
+      - "secrets/**"
+      - "**/.ssh/**"
+      - "**/id_rsa"
+      - "**/id_ed25519"
+
+  - id: allow-project-source-reads
+    effect: allow
+    action: file.read
+    paths:
+      - "apps/**"
+      - "crates/**"
+      - "config/**"
+      - "docs/**"
+      - "policies/**"
+      - "tests/**"
+
+  - id: confirm-file-writes
+    effect: ask
+    action: file.write
+
+  - id: confirm-process-execution
+    effect: ask
+    action: process.execute
+
+  - id: confirm-network-egress
+    effect: ask
+    action: network.connect
+
+  - id: confirm-mcp-calls
+    effect: ask
+    action: mcp.call

@@ -1,0 +1,13 @@
+[runtime]
+log_level = "info"
+state_directory = "var/state"
+cache_directory = "var/cache"
+audit_directory = "var/logs"
+
+[policy]
+default_policy = "policies/default.yaml"
+approval_mode = "ask"
+
+[network]
+default_action = "deny"
+allow_localhost = true

@@ -1,0 +1,25 @@
+# Rust build output
+/target/
+
+# Environment and sensitive material
+/.env
+/.env.*
+!/.env.example
+/secrets/*
+!/secrets/.gitkeep
+
+# Local runtime data
+/var/*
+!/var/.gitkeep
+/tmp/*
+!/tmp/.gitkeep
+/dist/*
+!/dist/.gitkeep
+
+# Editor and operating-system files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
